@@ -1,0 +1,164 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "Mi Band 5",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae amet id quibusdam exercitationem blanditiis maiores suscipit. Animi, est voluptatibus eius tempora sit ab dolorum provident qui minus laudantium delectus.",
+      "imageUrl": "https://lzd-img-global.slatic.net/g/p/306c580f8fb5fa886d49e2d8073a82bd.png_720x720q80.jpg_.webp",
+      "unitPrice": 102,
+      "unitsInStock": 68,
+      "brandId": 1,
+      "colorId": 1,
+      "categoryId": 4
+    },
+    {
+      "id": 2,
+      "productName": "Complications Ref",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae amet id quibusda",
+      "imageUrl": "http://swisstime.co/images/products/p3174_i10322_th2_patek-philippe-complications-ref--5205g-013-18k-white-gold-blue-self-winding-cal--324-s-qa-lu-24.jpg",
+      "unitPrice": 178,
+      "unitsInStock": 78,
+      "brandId": 2,
+      "colorId": 2,
+      "categoryId": 3
+    },
+    {
+      "id": 3,
+      "productName": "Annual Calendar.",
+      "description": "Annual Calendar. description",
+      "imageUrl": "https://www.montredo.com/wp-content/uploads/2020/06/ulysse-nardin-marine-chronometer-annual-calendar-43-mm-1133-210-3e3-27410-2.jpg",
+      "unitPrice": 115,
+      "unitsInStock": 25,
+      "brandId": 3,
+      "colorId": 3,
+      "categoryId": 1
+    },
+    {
+      "id": 4,
+      "productName": "Eco-Drive Ref.",
+      "description": "Eco-Drive Ref. description",
+      "imageUrl": "http://cdn.shopify.com/s/files/1/0213/7833/4784/products/CitizenAQ4080-52L1_1200x1200.jpg?v=1647582769",
+      "unitPrice": 34,
+      "unitsInStock": 57,
+      "brandId": 4,
+      "colorId": 4,
+      "categoryId": 3
+    },
+    {
+      "id": 5,
+      "productName": "Legacy Orbis Terrarum.",
+      "description": "Legacy Orbis Terrarum. description.",
+      "imageUrl": "https://cdn2.chrono24.com/images/uhren/18654513-semsxptdvpibr4owr3dj73iy-ExtraLarge.jpg",
+      "unitPrice": 276,
+      "unitsInStock": 41,
+      "brandId": 5,
+      "colorId": 3,
+      "categoryId": 1
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "brandName": "MI"
+    },
+    {
+      "id": 2,
+      "brandName": "Patek Philippe"
+    },
+    {
+      "id": 3,
+      "brandName": "Ulysse Nardin"
+    },
+    {
+      "id": 4,
+      "brandName": "Citizen"
+    },
+    {
+      "id": 5,
+      "brandName": "Montblanc"
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "colorName": "Black"
+    },
+    {
+      "id": 2,
+      "colorName": "Brown"
+    },
+    {
+      "id": 3,
+      "colorName": "Blue"
+    },
+    {
+      "id": 4,
+      "colorName": "White"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "New"
+    },
+    {
+      "id": 2,
+      "categoryName": "Old"
+    },
+    {
+      "id": 3,
+      "categoryName": "Classic"
+    },
+    {
+      "id": 4,
+      "categoryName": "Modern"
+    }
+  ],
+  "cards": [
+    {
+      "product": {
+        "id": 1,
+        "productName": "Mi Band 5",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae amet id quibusdam exercitationem blanditiis maiores suscipit. Animi, est voluptatibus eius tempora sit ab dolorum provident qui minus laudantium delectus.",
+        "imageUrl": "https://lzd-img-global.slatic.net/g/p/306c580f8fb5fa886d49e2d8073a82bd.png_720x720q80.jpg_.webp",
+        "unitPrice": 102,
+        "unitsInStock": 68,
+        "brandId": 1,
+        "colorId": 1,
+        "categoryId": 4
+      },
+      "productCount": 1,
+      "id": 1
+    },
+    {
+      "product": {
+        "id": 3,
+        "productName": "Annual Calendar.",
+        "description": "Annual Calendar. description",
+        "imageUrl": "https://www.montredo.com/wp-content/uploads/2020/06/ulysse-nardin-marine-chronometer-annual-calendar-43-mm-1133-210-3e3-27410-2.jpg",
+        "unitPrice": 115,
+        "unitsInStock": 25,
+        "brandId": 3,
+        "colorId": 3,
+        "categoryId": 1
+      },
+      "productCount": 1,
+      "id": 2
+    },
+    {
+      "product": {
+        "id": 2,
+        "productName": "Complications Ref",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae amet id quibusda",
+        "imageUrl": "http://swisstime.co/images/products/p3174_i10322_th2_patek-philippe-complications-ref--5205g-013-18k-white-gold-blue-self-winding-cal--324-s-qa-lu-24.jpg",
+        "unitPrice": 178,
+        "unitsInStock": 78,
+        "brandId": 2,
+        "colorId": 2,
+        "categoryId": 3
+      },
+      "productCount": 1,
+      "id": 3
+    }
+  ]
+}

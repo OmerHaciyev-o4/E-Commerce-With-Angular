@@ -1,0 +1,14 @@
+<div class="list-group user-select-none mb-4">
+    <h3>Colors</h3>
+    <a (click)="selectColor()" 
+    [class.active]="displayAll" 
+    [routerLink]="['product']" [queryParams]="{ color: 0}"
+    queryParamsHandling="merge"
+    class="list-group-item list-group-item-action pointer rounded-top">All
+        Colors</a>
+    <a *ngFor="let item of colors" (click)="selectColor(item)"
+        [class.active]="!displayAll && selectedColor?.id == item.id"
+        [routerLink]="['product']" [queryParams]="{ color: item.id}"
+        queryParamsHandling="merge"
+        class="list-group-item list-group-item-action active pointer">{{ item.colorName | titlecase }}</a>
+</div>

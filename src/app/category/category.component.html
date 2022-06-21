@@ -1,0 +1,16 @@
+<div class="list-group user-select-none">
+    <h3>Categories</h3>
+    <!-- [routerLink]="['/movies']"   -->
+    <a (click)="selectCategory()"
+        [class.active]="displayAll" 
+        [routerLink]="['product']" [queryParams]="{ category: 0}"
+        queryParamsHandling="merge"
+        class="list-group-item list-group-item-action pointer rounded-top">All
+        Categories</a>
+    <!-- [routerLink]="['/movies/category',item.id]" -->
+    <a *ngFor="let item of categories" (click)="selectCategory(item)"
+        [class.active]="!displayAll && selectedCategory?.id == item.id"
+        [routerLink]="['product']" [queryParams]="{ category: item.id}"
+        queryParamsHandling="merge"
+        class="list-group-item list-group-item-action active pointer">{{ item.categoryName | titlecase }}</a>
+</div>

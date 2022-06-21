@@ -1,0 +1,23 @@
+<div class="alert alert-danger" *ngIf="error">{{error.message}}</div>
+<div *ngIf="products.length > 0; then yes_products else no_products"></div>
+
+<ng-template 
+#yes_products 
+class="h-100 d-flex min-vh-100 justify-content-center align-items-center">
+    <div class="row gy-2 overflow-hidden">
+        <div class="col-lg-3 col-md-4 my-4" *ngFor="let product of products">
+            <div class="card p-0 h-100" style="width: 100%;" >
+                <img src="{{product.imageUrl}}" class="card-img-top border-0 w-100" alt="{{product.productName}}" style="height: 25rem;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title w-100 d-inline-block position-relative text-primary fw-bolder fs-6">{{product.productName}}<span class="position-absolute top-0 text-dark fw-normal" style="right: 0;">{{ product.unitPrice | currency }}</span></h5>
+                    <p class="card-text mb-4">{{product.description}}</p>
+                    <input class="mb-2 w-50" type="number" min="1" max="{{product.unitsInStock}}" value="1" #countItem>
+                    <a class="btn btn-sm w-100 text-center btn-success mt-auto" *ngIf="!product.addToCard" #addBTn (click)="crudProduct(addBTn, product, countItem)">{{ "add to card" | uppercase }}</a>
+                    <a class="btn btn-sm w-100 text-center btn-danger mt-auto" *ngIf="product.addToCard" #addBTn (click)="crudProduct(addBTn, product, countItem)">{{ "remove from card" | uppercase }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #no_products><div class="alert alert-warning mt-2 fs-5">No products found</div></ng-template>
