@@ -1,14 +1,15 @@
 <div class="list-group user-select-none mb-4">
   <h3>Brands</h3>
-  <a (click)="selectBrand()" 
+  <a (click)="selectBrand(); reloadAllComponent()" 
   [class.active]="displayAll" 
-  [routerLink]="['product']" [queryParams]="{ brand: 0}"
+  [routerLink]="['product']" [queryParams]="{ brandId: 0}"
   queryParamsHandling="merge"
   class="list-group-item list-group-item-action pointer rounded-top">
   All Brands</a>
-  <a *ngFor="let item of brands" (click)="selectBrand(item)"
+  
+  <a *ngFor="let item of brands" (click)="selectBrand(item); reloadAllComponent()"
     [class.active]="!displayAll && selectedBrand?.id == item.id"
-    [routerLink]="['product']" [queryParams]="{ brand: item.id}"
+    [routerLink]="['product']" [queryParams]="{ brandId: item.id}"
     queryParamsHandling="merge"
     class="list-group-item list-group-item-action active pointer">{{ item.brandName | titlecase }}</a>
 </div>

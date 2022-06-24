@@ -21,35 +21,50 @@ export class ProductComponent implements OnInit {
   error: any;
 
   constructor(private route: ActivatedRoute, private alertifyService: AlertifyService,private productService: ProductService,private cardService: CardService) {
-    Card.cardService = this.cardService;    
+    Card.cardService = this.cardService;
+   }
 
+  ngOnInit(): void {
     this.productService.getProducts().subscribe(data => {
       this.products = data;
-      const urlParams = new URLSearchParams(window.location.search);
-      const brand = urlParams.get('brand');
-      const color = urlParams.get('color');
-      const category = urlParams.get('category');
-      console.log(brand);
-      console.log(color);
-      console.log(category);
     });
  
     this.cardService.getCards(null).subscribe(data => {
       this.cards = data;
     });
-   }
 
-  ngOnInit(): void {
     setTimeout(() => {
-      this.products.forEach(product => {
-        this.cards.forEach(card => {
-          if (card.product.id == product.id) {
-            product.addToCard = true;
-          }
-        });
-      });
+      const urlParams = new URLSearchParams(window.location.search);
+      const brandId: string = urlParams.get('brandId');
+      const colorId: string = urlParams.get('colorId');
+      const categoryId: string = urlParams.get('categoryId');
 
-    }, 100);
+      let products: Product[] = Array.from(this.products);
+      let indexs: number[] = [];
+
+      if (brandId != null && Number(brandId) > 0) {
+        console.log("Brand part");
+        console.log(products);
+        products = products.filter(product => product.brandId == Number(brandId));
+        console.log(products);
+      }
+      
+      if (colorId != null && Number(colorId) > 0) {
+        console.log("Color part");
+        console.log(products);
+        products = products.filter(product => product.colorId == Number(colorId));
+        console.log(products);
+      }
+      
+      if (categoryId != null && Number(categoryId) > 0) {
+        console.log("Category part");
+        console.log(products);
+        products = products.filter(product => product.categoryId == Number(categoryId));
+        console.log(products);
+      }
+
+      this.products = products;
+    }, 10);
   }
 
   yesClick: boolean = false;
@@ -79,16 +94,11 @@ export class ProductComponent implements OnInit {
       if (card != null) {
         card.RemoveToRepo();
         product.addToCard = false;
-        this.alertifyService.error(item.title + ' removed from card');
+        this.alertifyService.warning(item.title + ' removed from card');
       }
       else{
-        this.alertifyService.warning('Please try again later.');
+        this.alertifyService.error('Please try again later.');
       }
     }
-
-
-    // item.addEventListener('click',  () => {
-    //   this.removeProduct(item);
-    // });
   }
 }

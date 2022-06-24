@@ -114,51 +114,5 @@
       "categoryName": "Modern"
     }
   ],
-  "cards": [
-    {
-      "product": {
-        "id": 1,
-        "productName": "Mi Band 5",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae amet id quibusdam exercitationem blanditiis maiores suscipit. Animi, est voluptatibus eius tempora sit ab dolorum provident qui minus laudantium delectus.",
-        "imageUrl": "https://lzd-img-global.slatic.net/g/p/306c580f8fb5fa886d49e2d8073a82bd.png_720x720q80.jpg_.webp",
-        "unitPrice": 102,
-        "unitsInStock": 68,
-        "brandId": 1,
-        "colorId": 1,
-        "categoryId": 4
-      },
-      "productCount": 1,
-      "id": 1
-    },
-    {
-      "product": {
-        "id": 3,
-        "productName": "Annual Calendar.",
-        "description": "Annual Calendar. description",
-        "imageUrl": "https://www.montredo.com/wp-content/uploads/2020/06/ulysse-nardin-marine-chronometer-annual-calendar-43-mm-1133-210-3e3-27410-2.jpg",
-        "unitPrice": 115,
-        "unitsInStock": 25,
-        "brandId": 3,
-        "colorId": 3,
-        "categoryId": 1
-      },
-      "productCount": 1,
-      "id": 2
-    },
-    {
-      "product": {
-        "id": 2,
-        "productName": "Complications Ref",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae amet id quibusda",
-        "imageUrl": "http://swisstime.co/images/products/p3174_i10322_th2_patek-philippe-complications-ref--5205g-013-18k-white-gold-blue-self-winding-cal--324-s-qa-lu-24.jpg",
-        "unitPrice": 178,
-        "unitsInStock": 78,
-        "brandId": 2,
-        "colorId": 2,
-        "categoryId": 3
-      },
-      "productCount": 1,
-      "id": 3
-    }
-  ]
+  "cards": []
 }

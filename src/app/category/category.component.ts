@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from '../models/category';
 import { CategoryService } from '../services/category.service';
 
@@ -12,8 +13,10 @@ import { CategoryService } from '../services/category.service';
 export class CategoryComponent implements OnInit {
   categories: Category[];
   selectedCategory: Category | null = null;
-  constructor(private categoryService: CategoryService) {
-    this.categories = [];
+  constructor(
+    private categoryService: CategoryService,
+    private router: Router,
+    private route: ActivatedRoute) {
   }
 
   displayAll = true;
@@ -27,9 +30,31 @@ export class CategoryComponent implements OnInit {
     }
   }
 
+  reloadAllComponent(){
+    setTimeout(() => {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = "reload";
+      this.router.navigate(['/'], {
+        relativeTo: this.route,
+        queryParamsHandling: "merge"
+      });
+    }, 10);
+  }
+
   ngOnInit() {
     this.categoryService.getCategories().subscribe(data=>{
       this.categories=data;
     });
+
+    setTimeout(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryId: String = urlParams.get('categoryId');
+      if (categoryId == "0") {
+        this.selectCategory();        
+      }
+      else if(categoryId != null){
+        this.selectCategory(this.categories[Number(categoryId) - 1]);
+      }
+    }, 100);
   }
 }
